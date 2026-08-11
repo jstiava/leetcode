@@ -1,34 +1,23 @@
-#include "unordered_map"
+// - Given a string s, find the length of the longest without duplicate characters.
 
-using namespace std;
+// Input: s = "abcabcbb"
+// Output: 3
+// Explanation: The answer is "abc", with the length of 3. Note that "bca" and "cab" are also correct answers.
+
+#include <set>
 
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        unordered_map<char, int> substring;
-        int max = 0;
-        int start = 0;
-        int i = 0;
 
-        while (true) {
-            if (i >= s.size()) {
-                return max;
+        set<char> bucket;
+
+        
+        for (int i = 0; i < s.size(); i++) {
+            if (s.isin(s[i])) {
+                
             }
-            else if (substring.contains(s[i])) {
-                max = substring.size() > max ? substring.size() : max;
-
-                int toLastOccurance = substring[s[i]] + 1;
-                substring.clear();
-                i = toLastOccurance;
-
-                if (s.size() - i <= max) {
-                    return max;
-                }
-            }    
-            else {
-                substring[s[i]] = i;
-                ++i;
-            }
+            s.insert(s[i])
         }
     }
 };
